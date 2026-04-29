@@ -53,6 +53,7 @@ type IconProps = {
   tone?: IconTone;
   label?: string;
   className?: string;
+  "aria-hidden"?: boolean | "true" | "false";
 };
 
 const sizeMap: Record<IconSize, number> = {
@@ -321,9 +322,11 @@ export function Icon({
   tone = "default",
   label,
   className,
+  "aria-hidden": ariaHiddenProp,
 }: IconProps) {
   const dimension = sizeMap[size];
-  const ariaHidden = label ? undefined : true;
+  // Explicit aria-hidden prop takes precedence; fall back to hiding when no label
+  const ariaHidden = ariaHiddenProp !== undefined ? ariaHiddenProp : (label ? undefined : true);
 
   return (
     <svg
