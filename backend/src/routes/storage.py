@@ -1,13 +1,13 @@
 import os
 from sqlalchemy.orm import Session
-from fastapi import APIRouter, HTTPException, status, Depends
+from fastapi import APIRouter, Depends
 from fastapi.responses import FileResponse
 from ..database import get_db
 from ..models import User, Claim
 from ..schemas import MessageResponse
 from ..dependencies import get_current_active_user
 from ..services.storage_service import storage_service
-from ..errors import FileNotFoundStorageError, InvalidStorageTokenError
+from ..errors import ClaimNotFoundError, FileNotFoundStorageError, InvalidStorageTokenError, NotAuthorizedError
 
 router = APIRouter(prefix="/storage", tags=["storage"])
 
@@ -57,10 +57,10 @@ async def delete_file(
 ):
     claim = db.query(Claim).filter(Claim.id == claim_id).first()
     if not claim:
-        raise HTTPException(status_code=404, detail="Claim not found")
-        
+        raise ClaimNotFoundError()
+
     if claim.claimant_id != current_user.id:
-        raise HTTPException(status_code=403, detail="Not authorized to delete this file")
+        raise NotAuthorizedError("Not authorized to delete this file")
         
     # Delete file from storage
     storage_service.delete_file(claim.proof)

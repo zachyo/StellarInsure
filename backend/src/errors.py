@@ -73,6 +73,11 @@ class InvalidFileTypeError(StellarInsureError):
     def __init__(self, detail: str = "File type not allowed"):
         super().__init__(status.HTTP_400_BAD_REQUEST, detail, "STORAGE_004")
 
+# Authorization Errors (AUTHZ_xxx)
+class NotAuthorizedError(StellarInsureError):
+    def __init__(self, detail: str = "Not authorized to perform this action"):
+        super().__init__(status.HTTP_403_FORBIDDEN, detail, "AUTHZ_001")
+
 # Validation Errors (VAL_xxx)
 class ValidationError(StellarInsureError):
     def __init__(self, detail: str, error_code: str = "VAL_001"):
