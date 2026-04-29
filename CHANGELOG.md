@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/ChaoLing140/StellarInsure/compare/v1.18.1...v1.19.0) (2026-04-29)
+
+
+### Features
+
+* implement dark mode with theme toggle and system preference support ([4b8f35f](https://github.com/ChaoLing140/StellarInsure/commit/4b8f35f72c6a777276f3c262e1e9d8db91b9e2c8))
+
 ## [1.18.1](https://github.com/ChaoLing140/StellarInsure/compare/v1.18.0...v1.18.1) (2026-04-29)
 
 
