@@ -1,3 +1,10 @@
+# [1.23.0](https://github.com/ChaoLing140/StellarInsure/compare/v1.22.0...v1.23.0) (2026-05-28)
+
+
+### Features
+
+* **policies:** fix aria labels, remove any types, persist view mode, add result count ([7381748](https://github.com/ChaoLing140/StellarInsure/commit/73817485d2eb582b9e0e139fe711f4b992c1bdce)), closes [#312](https://github.com/ChaoLing140/StellarInsure/issues/312) [#313](https://github.com/ChaoLing140/StellarInsure/issues/313) [#310](https://github.com/ChaoLing140/StellarInsure/issues/310) [#316](https://github.com/ChaoLing140/StellarInsure/issues/316) [#310](https://github.com/ChaoLing140/StellarInsure/issues/310) [#312](https://github.com/ChaoLing140/StellarInsure/issues/312) [#313](https://github.com/ChaoLing140/StellarInsure/issues/313) [#316](https://github.com/ChaoLing140/StellarInsure/issues/316)
+
 # [1.22.0](https://github.com/ChaoLing140/StellarInsure/compare/v1.21.1...v1.22.0) (2026-04-30)
 
 
